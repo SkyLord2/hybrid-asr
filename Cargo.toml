@@ -1,0 +1,24 @@
+[package]
+name = "hybrid-asr"
+version = "0.2.0"
+edition = "2024"
+description = "Hybrid realtime ASR SDK that unifies local SenseVoice and online streaming backends."
+readme = "README.md"
+license-file = "../../LICENSE"
+repository = "https://hgit.haier.net/s047911/underlying/perception-asr.git"
+homepage = "https://hgit.haier.net/s047911/underlying/perception-asr.git"
+documentation = "https://docs.rs/hybrid-asr"
+keywords = ["asr", "speech-recognition", "realtime", "streaming", "websocket"]
+categories = ["multimedia::audio", "api-bindings"]
+
+[dependencies]
+base64            = "0.22"
+crossbeam-channel = "0.5.15"
+model-installer   = { path = "../model-installer" }
+serde             = { version = "1", features = ["derive"] }
+serde_json        = "1"
+sherpa-onnx       = "1.13.2"
+vad-detector      = { path = "../vad-detector" }
+tungstenite       = { version = "0.26", features = ["native-tls"] }
+ureq              = { version = "2.12", features = ["json", "native-tls"] }
+uuid              = { version = "1", features = ["v4"] }
